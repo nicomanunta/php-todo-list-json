@@ -5,7 +5,12 @@
     if(isset($_POST["newText"])){
         $newText = $_POST["newText"];
 
-        array_push($list, $newText);
+        $newTodo = [
+            "text" => $newText,
+            "done" => false,
+        ];
+        
+        array_push($list, $newTodo);
 
         file_put_contents("todolist.json", json_encode($list));
 
