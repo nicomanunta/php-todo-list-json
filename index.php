@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center">
                         <ul class="list-group list-group-flush my-5 w-50">
-                            <li v-for="(todo, index) in todoList" :key="index" class="list-group-item d-flex" >
+                            <li v-for="todo, key in todoList" :key="key" class="list-group-item d-flex" >
                                 <div>
                                     <span>
                                         {{todo.text}}
@@ -27,6 +27,14 @@
                                 </div>
                             </li>   
                         </ul>    
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <input class="w-50 mx-1 form-control form-control-sm" type="text" placeholder="Aggiungi qualcosa da fare alla lista" aria-label=".form-control-sm example" v-model="newText" @keyup.enter="addText">
+                        <button type="button" class="mx-1 btn btn-outline-light" @click="addText">Aggiungi</button>
                     </div>
                 </div>
             </div>
