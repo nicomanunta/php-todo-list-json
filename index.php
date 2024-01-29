@@ -10,26 +10,29 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>    
-        <h1 class="text-center mt-3 fw-bold">Compiti di oggi!</h1>
-    </header>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center">
-                    <ul class="list-group list-group-flush my-5 w-50">
-                        <li class="list-group-item d-flex" >
-                            <div>
-                                <span>
-                                    {{}}
-                                </span>
-                            </div>
-                        </li>   
-                    </ul>    
+    <div id="app">
+        <header>    
+            <h1 class="text-center mt-3 fw-bold">Compiti di oggi!</h1>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <ul class="list-group list-group-flush my-5 w-50">
+                            <li v-for="(todo, index) in todoList" :key="index" class="list-group-item d-flex" >
+                                <div>
+                                    <span>
+                                        {{todo.text}}
+                                    </span>
+                                </div>
+                            </li>   
+                        </ul>    
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+
+    </div>
 
     <script src="./js/script.js" type="text/javascript"></script>
 </body>
